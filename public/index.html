@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notes CRUD</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { margin: 5px; }
+    .note { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>Notes CRUD Landing Page</h1>
+
+  <!-- Create Note -->
+  <h2>Create Note</h2>
+  <input type="text" id="createName" placeholder="Name">
+  <input type="text" id="createDescription" placeholder="Description">
+  <button onclick="createNote()">Create</button>
+
+  <hr>
+
+  <!-- List Notes -->
+  <h2>All Notes</h2>
+  <button onclick="listNotes()">Refresh List</button>
+  <div id="notesList"></div>
+
+  <hr>
+
+  <!-- View / Update / Delete Note -->
+  <h2>Manage Note</h2>
+  <input type="number" id="noteId" placeholder="Note ID">
+  <input type="text" id="updateName" placeholder="New Name">
+  <input type="text" id="updateDescription" placeholder="New Description">
+  <button onclick="viewNote()">View</button>
+  <button onclick="updateNote()">Update</button>
+  <button onclick="deleteNote()">Delete</button>
+
+  <script>
+    const apiUrl = "http://localhost:3000/notes";
+
+    async function createNote() {
+      const name = document.getElementById("createName").value;
+      const description = document.getElementById("createDescription").value;
+
+      const res = await fetch(`${apiUrl}/create`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, description })
+      });
+      const data = await res.json();
+      alert(JSON.stringify(data));
+      listNotes();
+    }
+
+    async function listNotes() {
+      const res = await fetch(`${apiUrl}/list`);
+      const data = await res.json();
+      const listDiv = document.getElementById("notesList");
+      listDiv.innerHTML = "";
+      data.data.forEach(note => {
+        const div = document.createElement("div");
+        div.className = "note";
+        div.innerHTML = `<strong>ID:</strong> ${note.id} <br> <strong>Name:</strong> ${note.name} <br> <strong>Description:</strong> ${note.body}`;
+        listDiv.appendChild(div);
+      });
+    }
+
+    async function viewNote() {
+      const id = document.getElementById("noteId").value;
+      const res = await fetch(`${apiUrl}/view/${id}`);
+      const data = await res.json();
+      alert(JSON.stringify(data));
+    }
+
+    async function updateNote() {
+      const id = document.getElementById("noteId").value;
+      const name = document.getElementById("updateName").value;
+      const description = document.getElementById("updateDescription").value;
+
+      const res = await fetch(`${apiUrl}/update/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, description })
+      });
+      const data = await res.json();
+      alert(JSON.stringify(data));
+      listNotes();
+    }
+
+    async function deleteNote() {
+      const id = document.getElementById("noteId").value;
+      const res = await fetch(`${apiUrl}/delete/${id}`, { method: "DELETE" });
+      const data = await res.json();
+      alert(JSON.stringify(data));
+      listNotes();
+    }
+
+    // Initial load
+    listNotes();
+  </script>
+</body>
+</html>
