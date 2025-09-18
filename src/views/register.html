@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+            background-color: #f7fafc; /* Lighter background for the right panel */
+            display: flex;
+            height: 100vh;
+        }
+
+        .brand-info {
+            flex: 1;
+            background-color: #f7fafc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #4a5568;
+            padding: 20px;
+        }
+
+        .brand-logo-large img {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        .brand-info h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin: 0;
+            text-align: center;
+        }
+
+        .brand-info p {
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .signup-panel {
+            flex: 1;
+            background-color: #0d1a2c; /* Darker background for the left panel */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #fff;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #4a5568;
+            background-color: #1a202c;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-divider {
+            color: #cbd5e0;
+            margin: 20px 0;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-signup {
+            background-color: #718096;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .btn-google {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 10px;
+        }
+
+        .btn-google img {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .alt-options {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .alt-options p {
+            color: #cbd5e0;
+            margin: 0;
+        }
+
+        .alt-options a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .brand-info {
+                display: none; /* Hide the brand info on mobile for a better user experience */
+            }
+
+            .signup-panel {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="brand-info">
+        <div class="brand-logo-large">
+            <!-- Replace with your SVG or image -->
+            <img src="/images/sd.jpg" alt="Sola Docdocil Logo">
+        </div>
+        <h1>SOLA DOCDOCIL</h1>
+        <p>LAW OFFICES AND NOTARIES PUBLIC</p>
+    </div>
+
+    <div class="signup-panel">
+        <div class="logo">
+            <!-- Replace with your SVG or image -->
+            <img src="/images/sd.jpg" alt="Sola Docdocil Logo">
+        </div>
+        <h2>Sign Up</h2>
+        
+        <form action="#" method="POST">
+            <div class="form-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Confirm Password" required>
+            </div>
+            <p class="form-divider">or</p>
+            <button class="btn btn-google" type="button">
+                <!-- Replace with Google Icon SVG or Image -->
+                <img src="/images/google.png" alt="Google icon">
+                Sign In with Google
+            </button>
+            <button class="btn btn-signup" type="submit">Sign Up</button>
+        </form>
+
+        <div class="alt-options">
+            <p>Already have an account? <a href="/">Sign In</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #fff;
+    background-color: #0d1a2c;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.login-panel {
+    flex: 1;
+    background-color: #0d1a2c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.logo img {
+    width: 150px; /* Adjust size as needed */
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: none; /* Hide labels for a cleaner look as per the image */
+}
+.form-group input {
+  width: 150%;            /* 1.5× the parent width */
+  max-width: 350px;       /* don’t let it get too huge */
+  padding: 12px;
+  border: 1px solid #4a5568;
+  background-color: #1a202c;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+
+  /* Centering trick */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.btn-login {
+    background-color: #718096;
+    color: #fff;
+}
+
+.alt-options {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.alt-options p {
+    color: #cbd5e0;
+    margin: 0 0 10px 0;
+}
+
+.alt-options a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #e2e8f0;
+
+    width: 200px;       /* control button size */
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+
+    margin: 15px auto;  /* centers horizontally */
+}
+.btn-google img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.brand-info {
+    flex: 1;
+    background-color: #f7fafc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #4a5568;
+}
+
+.brand-logo-large img {
+    width: 200px; /* Adjust size as needed */
+    margin-bottom: 20px;
+    filter: grayscale(100%);
+}
+
+.brand-info h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.brand-info p {
+    font-size: 1rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
